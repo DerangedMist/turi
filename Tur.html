@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="tk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Türkmenistan Syýahat Agentligi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #10b981 100%);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .turkmen-pattern {
+            background-image:
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(59, 130, 246, 0.05) 35px, rgba(59, 130, 246, 0.05) 70px);
+        }
+
+        .image-overlay {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-overlay::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+        }
+
+        .image-overlay>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        nav {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        .destination-img {
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card-hover:hover .destination-img {
+            transform: scale(1.1);
+        }
+
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-slide-in {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .flag-colors {
+            background: linear-gradient(to right, #1e7b3d 0%, #1e7b3d 33%, #ffffff 33%, #ffffff 66%, #ce1126 66%, #ce1126 100%);
+        }
+
+        .lang-btn {
+            color: #374151;
+        }
+
+        .lang-btn {
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #374151;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: #2563eb;
+}
+
+.lang-btn.active {
+    background: linear-gradient(135deg, #3b82f6, #10b981);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transform: scale(1.05);
+}
+.icon-box {
+    width: 42px;
+    height: 42px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.icon-box:hover {
+    background: linear-gradient(135deg, #3b82f6, #10b981);
+    transform: scale(1.1);
+}
+
+.title {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.desc {
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+}
+
+.social-btn {
+    width: 48px;
+    height: 48px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background: linear-gradient(135deg, #3b82f6, #10b981);
+    transform: scale(1.15);
+}
+.nav-link {
+    position: relative;
+    font-weight: 600;
+    color: #374151;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #2563eb;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(135deg, #3b82f6, #10b981);
+    transition: 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+    </style>
+</head>
+
+<body class="scroll-smooth pt-16">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-lg shadow-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+            <div class="flex items-center justify-between">
+    
+                <!-- ЛОГО -->
+                <div class="flex items-center space-x-3">
+                    <img src="IMG_20260321_1306.png"
+                        class="w-10 h-10 rounded-full object-cover shadow-md" alt="">
+                    <div>
+                        <h1 class="text-lg sm:text-xl font-bold gradient-text">Gözel Syýahat</h1>
+                        <p class="text-[10px] text-gray-500">Türkmenistan Syýahat</p>
+                    </div>
+                </div>
+    
+                <!-- DESKTOP MENU -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#baş" data-i18n="nav_home"
+                        class="nav-link">Baş sahypa</a>
+                    <a href="#biz-barada" data-i18n="nav_about"
+                        class="nav-link">Biz barada</a>
+                    <a href="#ýerler" data-i18n="nav_places"
+                        class="nav-link">Ýerler</a>
+                    <a href="#hyzmatlar" data-i18n="nav_services"
+                        class="nav-link">Hyzmatlar</a>
+                    <a href="#habarlaşmak" data-i18n="nav_contact"
+                        class="nav-link">Habarlaşmak</a>
+                </div>
+    
+                <!-- RIGHT SIDE -->
+                <div class="flex items-center space-x-3">
+    
+                    <!-- LANG -->
+                    <div class="hidden sm:flex items-center bg-gray-100 rounded-full p-1">
+                        <button class="lang-btn active" data-lang="tk">TK</button>
+                        <button class="lang-btn" data-lang="ru">RU</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="tr">TR</button>
+                    </div>
+    
+                    <!-- BURGER -->
+                    <button id="openMenu" class="md:hidden text-gray-700 text-2xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="mobileMenu"
+    class="fixed top-0 left-0 w-full h-full bg-white z-40 transform -translate-x-full transition duration-300 md:hidden">
+
+    <div class="p-6 pt-20">
+
+        <button id="closeMenu" class="text-2xl mb-10">
+            ✖
+        </button>
+
+        <!-- LANG MOBILE -->
+        <div class="flex justify-center mb-10 bg-gray-100 rounded-full p-1 w-fit mx-auto">
+            <button class="lang-btn active" data-lang="tk">TK</button>
+            <button class="lang-btn" data-lang="ru">RU</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="tr">TR</button>
+        </div>
+
+        <!-- LINKS -->
+        <div class="flex flex-col space-y-6 text-xl font-semibold text-center">
+            <a href="#baş" data-i18n="nav_home">Baş sahypa</a>
+            <a href="#biz-barada" data-i18n="nav_about">Biz barada</a>
+            <a href="#ýerler" data-i18n="nav_places">Ýerler</a>
+            <a href="#hyzmatlar" data-i18n="nav_services">Hyzmatlar</a>
+            <a href="#habarlaşmak" data-i18n="nav_contact">Habarlaşmak</a>
+        </div>
+
+    </div>
+</div>
+
+    <!-- Hero Section -->
+    <section id="baş"
+        class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-green-300 rounded-full blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="animate-float mb-8">
+                <div class="w-32 h-32 mx-auto bg-white rounded-full flex items-center justify-center shadow-2xl">
+                    <i class="fas fa-plane-departure text-6xl text-blue-600"></i>
+                </div>
+            </div>
+            <h1 data-i18n="hero_title"
+                class="text-5xl md:text-7xl font-bold text-white mb-6 text-shadow animate-slide-in">
+                Türkmenistana Hoş Geldiňiz
+            </h1>
+            <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto text-shadow" data-i18n="hero_subtitle">
+                Gadymy taryh, owadan tebigy gözellikler we mähirli myhmansöýerlik bilen dolu ajaýyp ýurda syýahat ediň
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a data-i18n="hero_btn_explore" href="#ýerler"
+                    class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition shadow-xl hover:shadow-2xl transform hover:scale-105">
+                    <i class="fas fa-map-marked-alt mr-2"></i>
+                    Ýerleri Öwren
+                </a>
+                <a data-i18n="hero_btn_contact" href="#habarlaşmak"
+                    class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-blue-600 transition shadow-xl transform hover:scale-105">
+                    <i class="fas fa-phone mr-2"></i>
+                    Habarlaş
+                </a>
+            </div>
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 text-white">
+                    <div class="text-4xl font-bold mb-2">1000+</div>
+                    <div data-i18n="hero_clients" class="text-sm">Şat Müşderiler</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 text-white">
+                    <div class="text-4xl font-bold mb-2">50+</div>
+                    <div data-i18n="hero_places" class="text-sm">Syýahat Ýerleri</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 text-white">
+                    <div class="text-4xl font-bold mb-2">15</div>
+                    <div data-i18n="hero_experience" class="text-sm">Ýyllyk Tejribe</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 text-white">
+                    <div class="text-4xl font-bold mb-2">24/7</div>
+                    <div data-i18n="hero_support" class="text-sm">Goldaw</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="biz-barada" class="py-20 bg-gray-50 turkmen-pattern">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 data-i18n="about_title" class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                    <span class="gradient-text">Türkmenistan</span> Barada
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-500 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="Gemini_Generated_Image_neepvneepvneepv.png"
+                        alt="Türkmenistan" class="w-full h-96 object-cover">
+                </div>
+                <div>
+                    <h3 data-i18n="about_subtitle" class="text-3xl font-bold text-gray-800 mb-6">Gadymy Taryh we Häzirki
+                        Zaman</h3>
+                    <p data-i18n="about_text_1" class="text-gray-700 text-lg mb-4 leading-relaxed">
+                        Türkmenistan Merkezi Aziýada ýerleşýän ajaýyp döwletdir. Gadymy Beýik Ýüpek Ýolunyň üstünde
+                        ýerleşýän bu ýurt baý taryhy we medeni mirasa eýedir.
+                    </p>
+                    <p data-i18n="about_text_2" class="text-gray-700 text-lg mb-6 leading-relaxed">
+                        Türkmenistan dünýäde iň gadymy siwilizasiýalaryň biridigi bolan Margiana we Parthiýa
+                        patyşalyklaryna öý eýeçiligini edipdir. Aşgabat, Merw, we Köneürgenç ýaly şäherler dünýäniň iň
+                        gyzykly taryhy ýerleriniň hataryna girýär.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-landmark text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <div data-i18n="about_history" class="font-bold text-gray-800">Taryhy Ýerler</div>
+                                <div data-i18n="about_nature_1" class="text-sm text-gray-600">UNESCO Mirasy</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-mountain text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <div data-i18n="about_nature_2" class="font-bold text-gray-800">Tebigy Gözellik</div>
+                                <div data-i18n="about_nature_3" class="text-sm text-gray-600">Sähra we Daglar</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-star text-white text-2xl"></i>
+                    </div>
+                    <h4 data-i18n="feature_hospitality_title" class="text-2xl font-bold text-gray-800 mb-4">Myhmansöýerlik</h4>
+                    <p data-i18n="feature_hospitality_desc" class="text-gray-600 leading-relaxed">
+                        Türkmen halkynyň myhmansöýerligi dünýä belli. Her myhmana öýdäki ýaly mähirli we dostlukly
+                        çemeleşilýär.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-palette text-white text-2xl"></i>
+                    </div>
+                    <h4 data-i18n="feature_culture_title" class="text-2xl font-bold text-gray-800 mb-4">Medeniýet</h4>
+                    <p data-i18n="feature_culture_desc" class="text-gray-600 leading-relaxed">
+                        Baý medeni däp-dessurlar, döredijilik sungaty we gadymy senetler halkyň durmuşynyň aýrylmaz
+                        bölegidir.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-utensils text-white text-2xl"></i>
+                    </div>
+                    <h4 data-i18n="feature_food_title" class="text-2xl font-bold text-gray-800 mb-4">Milli Aşlar</h4>
+                    <p data-i18n="feature_food_desc" class="text-gray-600 leading-relaxed">
+                        Türkmen tagamlary özboluşly tagamy we däpleri bilen dünýäde tanalýar. Palaw, şaşlyk we çörek iň
+                        meşhur naharlarymyzdyr.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="ýerler" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 data-i18n="destinations_title_2" class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                    Meşhur <span class="gradient-text">Syýahat Ýerleri</span>
+                </h2>
+                <p data-i18n="destinations_subtitle" class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Türkmenistanyň iň gözel we gyzykly ýerlerini açyň
+                </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Destination 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="overflow-hidden">
+                        <img src="280524-034.jpg"
+                            alt="Aşgabat" class="destination-img w-full">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 data-i18n="dest_ashgabat_title" class="text-2xl font-bold text-gray-800">Aşgabat</h3>
+                            <div class="flex items-center text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p data-i18n="dest_ashgabat_desc" class="text-gray-600 mb-4">
+                            Türkmenistanyň paýtagty, ak mermerden gurlan şäher. Häzirki zaman binagärlik sungatynyň
+                            ajaýyp nusgasy.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2 text-gray-500">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-i18n="dest_ashgabat_tag" class="text-sm">Paýtagt</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="overflow-hidden">
+                        <img src="IMG-20231203-WA0011.jpg" alt="Derweze"
+                            class="destination-img w-full">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 data-i18n="dest_darvaza_title" class="text-2xl font-bold text-gray-800">Derweze</h3>
+                            <div class="flex items-center text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p data-i18n="dest_darvaza_desc" class="text-gray-600 mb-4">
+                            "Dowzagyň Gapysy" diýlip atlandyrylýan ajaýyp tebigy hadysa. Gije-gündiz ýanýan gaz
+                            krateridir.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div data-i18n="dest_darvaza_tag" class="flex items-center space-x-2 text-gray-500">
+                                <i class="fas fa-fire"></i>
+                                <span class="text-sm">Gaz Krateri</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="overflow-hidden">
+                        <img src="torebeg-hanym-mawzoleyi-koneurgench.jpg"
+                            alt="Köneürgenç" class="destination-img w-full">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 data-i18n="dest_kunya_title" class="text-2xl font-bold text-gray-800">Köneürgenç</h3>
+                            <div class="flex items-center text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p data-i18n="dest_kunya_desc" class="text-gray-600 mb-4">
+                            UNESCO-nyň Bütindünýä mirasy. Gadymy Horezm patyşalygymyzyň yzlary, taryhy binalar we
+                            minorlar.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div data-i18n="dest_kunya_tag" class="flex items-center space-x-2 text-gray-500">
+                                <i class="fas fa-mosque"></i>
+                                <span class="text-sm">UNESCO Mirasy</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="overflow-hidden">
+                        <img src="View_from_the_city_walls_Khiva_4934484894.jpg"
+                            alt="Merw" class="destination-img w-full">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 data-i18n="dest_merv_title" class="text-2xl font-bold text-gray-800">Merw</h3>
+                            <div class="flex items-center text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p data-i18n="dest_merv_desc" class="text-gray-600 mb-4">
+                            Gadymy Beýik Ýüpek Ýolunyň üstündäki iň uly we mährum şäherleriniň biri. Baý taryhy
+                            ýadygärlikler.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div data-i18n="dest_merv_tag" class="flex items-center space-x-2 text-gray-500">
+                                <i class="fas fa-monument"></i>
+                                <span class="text-sm">Taryhy Şäher</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 5 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="overflow-hidden">
+                        <img src="unnamed_1.jpg" alt="Köýtendag"
+                            class="destination-img w-full">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 data-i18n="dest_koytendag_title" class="text-2xl font-bold text-gray-800">Köýtendag</h3>
+                            <div class="flex items-center text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p data-i18n="dest_koytendag_desc" class="text-gray-600 mb-4">
+                            Dagly sebit, tebigy goraghanalar we özboluşly flora-fauna. Tebigy gözellik bilen dolu ýer.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div data-i18n="dest_koytendag_tag" class="flex items-center space-x-2 text-gray-500">
+                                <i class="fas fa-mountain"></i>
+                                <span class="text-sm">Dagly Sebit</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Destination 6 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg card-hover">
+                    <div class="overflow-hidden">
+                        <img src="01-400x300.jpg"
+                            alt="Awaza" class="destination-img w-full">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 data-i18n="dest_awaza_title" class="text-2xl font-bold text-gray-800">Awaza</h3>
+                            <div class="flex items-center text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p data-i18n="dest_awaza_desc" class="text-gray-600 mb-4">
+                            Hazar deňziniň kenaryndaky häzirki zaman dynç alyş zolagy. Pläž we lukman sebitleri.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div data-i18n="dest_awaza_tag" class="flex items-center space-x-2 text-gray-500">
+                                <i class="fas fa-umbrella-beach"></i>
+                                <span class="text-sm">Dynç Alyş</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="hyzmatlar" class="py-20 bg-gradient-to-br from-blue-50 to-green-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 data-i18n="services_title_1" class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                    Biziň 
+                </h2>
+                <span class="gradient-text text-4xl md:text-5xl font-bold text-gray-800 mb-4" data-i18n="services_title_2">Hyzmatlarymyz</span>
+                <p data-i18n="services_subtitle" class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Siziň ajaýyp syýahatyňyzy guramak üçin ähli zerur hyzmatlar
+                </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition card-hover text-center">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-6 transform hover:rotate-12 transition">
+                        <i class="fas fa-hotel text-white text-3xl"></i>
+                    </div>
+                    <h3 data-i18n="service_hotel_title" class="text-2xl font-bold text-gray-800 mb-4">Myhmanhana Bronlaş</h3>
+                    <p data-i18n="service_hotel_desc" class="text-gray-600">
+                        Iň gowy myhmanhanalardan saýlap, rahat we ykjam myhmanhanalary bronlaň.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition card-hover text-center">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-full flex items-center justify-center mx-auto mb-6 transform hover:rotate-12 transition">
+                        <i class="fas fa-bus text-white text-3xl"></i>
+                    </div>
+                    <h3 data-i18n="service_transport_title" class="text-2xl font-bold text-gray-800 mb-4">Transport Hyzmatlary</h3>
+                    <p data-i18n="service_transport_desc" class="text-gray-600">
+                        Howa menzilinden myhmanhana çenli we ähli syýahat ugurlary üçin amatly transport.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition card-hover text-center">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mx-auto mb-6 transform hover:rotate-12 transition">
+                        <i class="fas fa-user-tie text-white text-3xl"></i>
+                    </div>
+                    <h3 data-i18n="service_guide_title" class="text-2xl font-bold text-gray-800 mb-4">Ekskursiýa Gollanmasy</h3>
+                    <p data-i18n="service_guide_desc" class="text-gray-600">
+                        Tejribeli we bilimli gollanmalar bilen ähli taryhy we gözel ýerleri gezýäň.
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition card-hover text-center">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center mx-auto mb-6 transform hover:rotate-12 transition">
+                        <i class="fas fa-passport text-white text-3xl"></i>
+                    </div>
+                    <h3 data-i18n="service_visa_title" class="text-2xl font-bold text-gray-800 mb-4">Wiza Goldawy</h3>
+                    <p data-i18n="service_visa_desc" class="text-gray-600">
+                        Wiza resmileşdirmek we ähli zerur resminamalary taýýarlamakda kömek edýäris.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-white rounded-3xl shadow-2xl overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-12 flex flex-col justify-center">
+                        <h3 data-i18n="offer_title" class="text-3xl font-bold text-gray-800 mb-6">Ýörite Teklipimiz</h3>
+                        <p data-i18n="offer_desc" class="text-gray-600 text-lg mb-6 leading-relaxed">
+                            Häzir Türkmenistana syýahat turlaryny arzanladyş bilen almagy başlaň! 7 günlük tur
+                            paketlerimize 20% arzanladyş alýarsyňyz.
+                        </p>
+                        <ul class="space-y-4 mb-8">
+                            <li data-i18n="offer_li_1" class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                <span class="text-gray-700">Myhmanhana we nahar öz içinde</span>
+                            </li>
+                            <li data-i18n="offer_li_2" class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                <span class="text-gray-700">Professional gollanma hyzmaty</span>
+                            </li>
+                            <li data-i18n="offer_li_3" class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                <span class="text-gray-700">Transport we muzeý petekleri</span>
+                            </li>
+                            <li data-i18n="offer_li_4" class="flex items-center space-x-3">
+                                <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                <span class="text-gray-700">24/7 goldaw hyzmaty</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="h-full min-h-[400px]">
+                        <img src="photo-1488646953014-85cb44e25828.jpg"
+                            alt="Ýörite Teklip" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+            
+                <div class="max-w-6xl mx-auto pt-20 px-6">
+            
+                    <!-- TITLE -->
+                    <div class="text-center mb-16">
+                        <h2 data-i18n="tour_title" class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+                            5 Gün / 4 Gije Syýahat
+                        </h2>
+                        <p data-i18n="tour_subtitle" class="text-gray-600 max-w-2xl mx-auto">
+                            Aşgabat we Türkmenistanyň iň ajaýyp ýerleri boýunça aýratyn syýahat programmasy
+                        </p>
+                    </div>
+            
+                    <!-- GRID -->
+                    <div class="grid md:grid-cols-2 gap-10">
+            
+                        <!-- DAY 1 -->
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                            <img src="280524-034.jpg" class="w-full h-52 object-cover">
+                            <div class="p-6">
+                                <h3 data-i18n="tour_day1_title" class="text-xl font-bold mb-3">1-nji gün – Aşgabat</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed space-y-3">
+                                    <span data-i18n="tour_day1_1" class="block">
+                                        Irden ir sagatlarda sizi howa menzilinde garşy alarys we myhmanhana ýerleşdireris.
+                                    </span>
+                                
+                                    <span data-i18n="tour_day1_2" class="block">
+                                        🍽 <b>Ertirlik:</b> ýerli restoranda nahar edinilýär, soňra dynç almak üçin wagt berilýär.
+                                    </span>
+                                
+                                    <span data-i18n="tour_day1_3" class="block">
+                                        📍 <b>Gezelenç:</b> Garaşsyzlyk meýdany (118m beýiklikdäki ýadygärlik), taryhy heýkeller we seýilgähler.
+                                    </span>
+                                
+                                    <span data-i18n="tour_day1_4" class="block">
+                                        🍴 Günortanlykdan soň <b>Bitaraplyk binasy</b> we <b>Ashgabat Mall</b> gezilýär.
+                                    </span>
+                                
+                                    <span data-i18n="tour_day1_5" class="block">
+                                        🌆 Şäher boýunça gezelenç. Gijäni myhmanhanada geçireris.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+            
+                        <!-- DAY 2 -->
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                            <img src="2kogouCZUJeRjBdD7qfRCIaKlzGzk9Mz6SigZEg59f1CXklpCMXgVOC89bxc.jpg" class="w-full h-52 object-cover">
+                            <div class="p-6">
+                                <h3 data-i18n="tour_day2_title" class="text-xl font-bold mb-3">2-nji gün – Köne Nusaý</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed space-y-3">
+                                    <span data-i18n="tour_day2_1" class="block">
+                                        🏛 <b>Köne Nusaý</b> – parfýanlaryň gadymy şäheri.
+                                    </span>
+                                
+                                    <span data-i18n="tour_day2_2" class="block">
+                                        Bu ýerde tapyldy:
+                                        • mawzoleýler  
+                                        • ybadathanalar  
+                                        • gadymy hazynalar  
+                                        • sungat eserleri we teňňeler  
+                                    </span>
+                                
+                                    <span data-i18n="tour_day2_3" class="block">
+                                        🍽 Günortanlykdan soň <b>Watan mukaddesligi muzeýi</b> gezilýär:
+                                        • Göktepe söweşi  
+                                        • taryh we uruş maglumatlary  
+                                        • ýer titreme zaly  
+                                        • häzirki Aşgabat  
+                                    </span>
+                                
+                                    <span data-i18n="tour_day2_4" class="block">
+                                        🛍 Agşamlyk — Berkarar söwda merkezinde.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+            
+                        <!-- DAY 3 -->
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                            <img src="glawny.jpg" class="w-full h-70 object-cover">
+                            <div class="p-6">
+                                <h3 data-i18n="tour_day3_title" class="text-xl font-bold mb-3">3-nji gün – Ahalteke atlary</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed space-y-3">
+                                    <span data-i18n="tour_day3_1" class="block">
+                                        🐎 <b>Ahal-teke atlary</b> bilen tanyşlyk.
+                                    </span>
+                                
+                                    <span data-i18n="tour_day3_2" class="block">
+                                        Bu atlar:
+                                        • asylly we owadan  
+                                        • altyn/kümüş öwüşginli  
+                                        • çydamly we çalasyn  
+                                    </span>
+                                
+                                    <span data-i18n="tour_day3_3" class="block">
+                                        Atçylyk medeniýeti we türkmen gymmatlygy bilen tanyşlyk.
+                                    </span>
+                                
+                                    <span data-i18n="tour_day3_4" class="block">
+                                        🍽 Agşamlyk ýerli restoranda. Şäher gezelenji.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+            
+                        <!-- DAY 4 -->
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition">
+                            <img src="IMG-20231203-WA0011.jpg" class="w-full h-96 object-cover">
+                            <div class="p-6">
+                                <h3 data-i18n="tour_day4_title" class="text-xl font-bold mb-3">4-nji gün – Derweze (Hell Gates)</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed space-y-3">
+                                    <span data-i18n="tour_day4_1" class="block">
+                                        🔥 <b>Derweze gaz krateri</b> (60m, 1971-den bäri ýanýar).
+                                    </span>
+                                
+                                    <span data-i18n="tour_day4_2" class="block">
+                                        🏜 Garagum çöli boýunça syýahat — Beýik Ýüpek ýolunyň bölegi.
+                                    </span>
+                                
+                                    <span data-i18n="tour_day4_3" class="block">
+                                        🍖 Agşam: mangal we gijeki fotosessiýa.
+                                    </span>
+                                
+                                    <span data-i18n="tour_day4_4" class="block">
+                                        ⛺ Gijäni <b>ak öýde (ýurt)</b> geçireris — türkmen däp-dessury.
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+            
+                        <!-- DAY 5 -->
+                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition md:col-span-2">
+                            <img src="ashgabat-airport.jpg" class="w-full h-72 object-cover">
+                            <div class="p-6">
+                                <h3 data-i18n="tour_day5_title" class="text-xl font-bold mb-3">5-nji gün – Gaýdyp uçuş</h3>
+                                <p class="text-gray-600 text-sm leading-relaxed space-y-3">
+                                    <span data-i18n="tour_day5_1" class="block">
+                                        🛍 Aşgabat söwda merkezinde gezelenç.
+                                    </span>
+                                
+                                    <span data-i18n="tour_day5_2" class="block">
+                                        🍽 Günortanlykdan soň myhmanhana gaýdylýar.
+                                    </span>
+                                
+                                    <span data-i18n="tour_day5_3" class="block">
+                                        ✈ Aeroporta ugradylyp, uçuş:
+                                        <b>FZ 732 – 05:20</b>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+            
+                    </div>
+            
+                    <!-- PRICE -->
+                    <div class="mt-16 bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-2xl p-8 text-center shadow-lg">
+                        <h3 data-i18n="tour_price_title" class="text-3xl font-bold mb-4">Bahasy: 870$</h3>
+                        <p data-i18n="tour_price_desc" class="text-white/90 mb-4">
+                            4 gijelik myhmanhana + 1 gije çadyrda ýaşamak
+                        </p>
+                        
+                    </div>
+            
+                </div>
+            
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 data-i18n="testimonials_title_1" class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                    Müşderilerimiziň 
+                </h2><span data-i18n="testimonials_title_2" class="gradient-text text-4xl md:text-5xl font-bold text-gray-800 mb-4">Pikirler</span>
+                <p data-i18n="testimonials_subtitle" class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Türkmenistanda biziň bilen syýahat eden müşderilerimiz näme diýýär?
+                </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="https://i.pravatar.cc/100?img=33" alt="Müşderi" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 data-i18n="testimonial_1_name" class="font-bold text-gray-800 text-lg">Ahmed Magtymow</h4>
+                            <div class="flex text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p data-i18n="testimonial_1_text" class="text-gray-600 italic leading-relaxed">
+                        "Ajaýyp tejribe! Ähli zat gaty gowy gurnalypdy. Gollanmamyz örän bilimli we mähirli adamdy.
+                        Türkmenistanyň taryhy ýerlerini görmek meniň üçin ýatdan çykmajak tejribe boldy."
+                    </p>
+                </div>
+
+                <div
+                    class="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="https://i.pravatar.cc/100?img=45" alt="Müşderi" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 data-i18n="testimonial_2_name" class="font-bold text-gray-800 text-lg">Jennet Gurbanova</h4>
+                            <div class="flex text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p data-i18n="testimonial_2_text" class="text-gray-600 italic leading-relaxed">
+                        "Professional hyzmat we ajaýyp myhmansöýerlik. Derwezäni görmek haýran galdyryjy tejribe! Ähli
+                        zatlar wagtynda we gowy gurnaldy. Uly minnetdarlyk bildirýärin!"
+                    </p>
+                </div>
+
+                <div
+                    class="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="https://i.pravatar.cc/100?img=12" alt="Müşderi" class="w-16 h-16 rounded-full mr-4">
+                        <div>
+                            <h4 data-i18n="testimonial_3_name" class="font-bold text-gray-800 text-lg">Döwlet Annaýew</h4>
+                            <div class="flex text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p data-i18n="testimonial_3_text" class="text-gray-600 italic leading-relaxed">
+                        "Maşgalama bilen ajaýyp syýahat. Çagalar we ulular üçin gyzykly maksatnamalar taýýarlanypdyr.
+                        Awaza pläžinde dynç almak aýratyn lezzetlidi. Hemmesine maslahat berýärin!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 data-i18n="gallery_title_1" class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                    Surat 
+                </h2>
+                <span data-i18n="gallery_title_2" class="gradient-text text-4xl md:text-5xl font-bold text-gray-800 mb-4">Galereýa</span>
+                <p data-i18n="gallery_subtitle" class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Türkmenistanyň gözelligini suratlar arkaly synlaň
+                </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="overflow-hidden rounded-2xl shadow-lg card-hover">
+                    <img src="LgZ2E78R9Bz4U317Z8QhrUkNPJtaGR-267x206.jpg"
+                        alt="Gallery 1" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-lg card-hover">
+                    <img src="nochnoj-ashhabad.jpg"
+                        alt="Gallery 2" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-lg card-hover">
+                    <img src="turkmenistan-yangikal-460x345.webp"
+                        alt="Gallery 3" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-lg card-hover">
+                    <img src="turkmenistan-darvaza-1-1536x1152.webp"
+                        alt="Gallery 4" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-lg card-hover">
+                    <img src="turkmenistan.-foto-s-puteshestviya-20-480x360.webp"
+                        alt="Gallery 5" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-lg card-hover">
+                    <img src="Soltan-Sanjar-mausoleum_15_11zon-card.jpg"
+                        alt="Gallery 6" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-lg card-hover">
+                    <img src="20250518_185616_edited_valencia.jpg"
+                        alt="Gallery 7" class="w-full h-64 object-cover">
+                </div>
+                <div class="overflow-hidden rounded-2xl shadow-lg card-hover">
+                    <img src="4-day-turkmenistan-group-tour-from-bukhara.jpg"
+                        alt="Gallery 8" class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="habarlaşmak"
+    class="py-20 bg-gradient-to-br from-blue-600 via-blue-700 to-green-600 text-white">
+
+    <div class="container mx-auto px-4 sm:px-6">
+
+        <!-- Title -->
+        <div class="text-center mb-16">
+            <h2 data-i18n="contact_title" class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-shadow">
+                Biziň Bilen Habarlaşyň
+            </h2>
+            <p data-i18n="contact_subtitle" class="text-lg sm:text-xl max-w-2xl mx-auto text-white/90">
+                Soraglaryňyz bar bolsa ýa-da syýahatyňyzy guramak isleseňiz, bize ýüz tutuň
+            </p>
+            <div class="w-24 h-1 bg-white mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Center Block -->
+        <div class="flex justify-center">
+            <div
+                class="w-full max-w-2xl bg-white/10 backdrop-blur-xl rounded-3xl p-6 sm:p-8 shadow-2xl border border-white/20">
+
+                <h3 data-i18n="contact_info_title" class="text-xl sm:text-2xl text-center font-bold mb-8">
+                    Habarlaşmak Maglumatlary
+                </h3>
+
+                <div class="space-y-8">
+
+                    <!-- Row 1 -->
+                    <div class="flex flex-col sm:flex-row gap-6 sm:gap-8">
+
+                        <!-- Address -->
+                        <div class="flex items-start space-x-4 flex-1">
+                            <div class="icon-box">
+                                <a href="https://maps.app.goo.gl/ZTLjKmKWucJVgghR8"><i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 data-i18n="contact_address_title" class="title">Salgy</h4>
+                                <p data-i18n="contact_address_desc" class="desc">Aşgabat şäheri, Kendir obýezdnoý.</p>
+                            </div>
+                        </div></a>
+
+                        <!-- Phone -->
+                        <div class="flex items-start space-x-4 flex-1">
+                            <div class="icon-box">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 data-i18n="contact_phone_title" class="title">Telefon</h4>
+                                <a href="tel:+993 65 557427"><p class="desc">+993 65 557427</p></a>
+                                <a href="tel:+993 71 026664"><p class="desc">+993 71 026664</p></a>
+                                <a href="tel:+993 71 026663"><p class="desc">+993 71 026663</p></a>
+                                <a href="tel:+993 65 432109"><p class="desc">+993 65 432109</p></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="flex flex-col sm:flex-row gap-6 sm:gap-8">
+
+                        <!-- Email -->
+                       <div class="flex items-start space-x-4 flex-1">
+                            <div class="icon-box">
+                                <a href="mailto:info.gozeltravel@gmail.com" target="_blank"><i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 data-i18n="contact_email_title" class="title">Email</h4>
+                                <p class="desc">info.gozeltravel@gmail.com</p>
+                            </div></a>
+                        </div>
+
+                        <!-- Work Time -->
+                        <div class="flex items-start space-x-4 flex-1">
+                            <div class="icon-box">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 data-i18n="contact_worktime_title" class="title">Iş Wagty</h4>
+                                <p data-i18n="contact_worktime_1" class="desc">Duşenbe - Juma: 09:00 - 18:00</p>
+                                <p data-i18n="contact_worktime_2" class="desc">Ýekşenbe: Işlänok</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Social -->
+                    <div class="pt-6 border-t border-white/20 text-center">
+                        <h3 data-i18n="contact_social_title" class="text-xl sm:text-2xl font-bold mb-6">
+                            Sosial Mediýa
+                        </h3>
+
+                        <div class="flex justify-center gap-4 flex-wrap">
+                            <a href="" class="social-btn"><i class="fab fa-telegram"></i></a>
+                            <a href="https://wa.me/99365557427" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/gozel_travel?igsh=MXN5ajBkNWllaWVudg==" class="social-btn"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@gozel_syyahat?_r=1&_t=ZS-94uDRjCdZkz" class="social-btn"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-blue-600 to-green-500 rounded-full flex items-center justify-center">
+                            <img class="w-12 h-12 bg-gradient-to-br from-blue-600 to-green-500 rounded-full flex items-center justify-center"
+                                src="IMG_20260321_1306.png" alt="">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Gözel Syýahat</h3>
+                            <p data-i18n="footer_agency" class="text-xs text-gray-400">Syýahat Agentligi</p>
+                        </div>
+                    </div>
+                    <p data-i18n="footer_agency" class="text-gray-400 text-sm">
+                        Türkmenistanyň iň gowy syýahat agentligi. Siziň ajaýyp syýahatyňyz üçin ähli hyzmatlary
+                        hödürleýäris.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 data-i18n="footer_links" class="text-lg font-bold mb-4">Çalt Baglanyşyklar</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a data-i18n="nav_home" href="#baş" class="hover:text-white transition">Baş sahypa</a></li>
+                        <li><a data-i18n="nav_about" href="#biz-barada" class="hover:text-white transition">Biz barada</a></li>
+                        <li><a data-i18n="nav_places" href="#ýerler" class="hover:text-white transition">Ýerler</a></li>
+                        <li><a data-i18n="nav_services" href="#hyzmatlar" class="hover:text-white transition">Hyzmatlar</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 data-i18n="footer_places" class="text-lg font-bold mb-4">Syýahat Ýerleri</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a data-i18n="dest_ashgabat_title" href="#" class="hover:text-white transition">Aşgabat</a></li>
+                        <li><a data-i18n="dest_darvaza_title" href="#" class="hover:text-white transition">Derweze</a></li>
+                        <li><a data-i18n="dest_kunya_title" href="#" class="hover:text-white transition">Köneürgenç</a></li>
+                        <li><a data-i18n="dest_merv_title" href="#" class="hover:text-white transition">Awaza</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p data-i18n="footer_rights" class="text-gray-400 text-sm mb-4 md:mb-0">
+                    © 2024 Gözel Syýahat. Ähli hukuklar goralan.
+                </p>
+                <div class="flex space-x-6">
+                    <a data-i18n="footer_privacy" href="#" class="text-gray-400 hover:text-white transition">Gizlinlik Syýasaty</a>
+                    <a data-i18n="footer_terms" href="#" class="text-gray-400 hover:text-white transition">Şertler we Düzgünler</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTop"
+        class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-full shadow-lg hover:shadow-2xl transition transform hover:scale-110 opacity-0 pointer-events-none z-50">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
+    <script>
+        const mobileMenu = document.getElementById('mobileMenu');
+const openMenu = document.getElementById('openMenu');
+const closeMenu = document.getElementById('closeMenu');
+
+// открыть меню
+openMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('-translate-x-full');
+});
+
+// закрыть меню
+closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.add('-translate-x-full');
+});
+
+// закрытие при клике на ссылку
+mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('-translate-x-full');
+    });
+});
+        const translations = {
+            tk: {
+                page_title: "Türkmenistan Syýahat Agentligi",
+    
+    logo_title: "Gözel Syýahat",
+    logo_subtitle: "Türkmenistan Syýahat",
+    
+    nav_home: "Baş sahypa",
+    nav_about: "Biz barada",
+    nav_places: "Ýerler",
+    nav_services: "Hyzmatlar",
+    nav_contact: "Habarlaşmak",
+    
+    hero_title: "Türkmenistana Hoş Geldiňiz",
+    hero_subtitle: "Gadymy taryh, owadan tebigy gözellikler we mähirli myhmansöýerlik bilen dolu ajaýyp ýurda syýahat ediň",
+    hero_btn_explore: "Ýerleri Öwren",
+    hero_btn_contact: "Habarlaş",
+    hero_clients: "Şat Müşderiler",
+    hero_places: "Syýahat Ýerleri",
+    hero_experience: "Ýyllyk Tejribe",
+    hero_support: "Goldaw",
+    
+    about_title_1: "Türkmenistan",
+    about_title_2: "Barada",
+    about_subtitle: "Gadymy Taryh we Häzirki Zaman",
+    about_text_1: "Türkmenistan Merkezi Aziýada ýerleşýän ajaýyp döwletdir. Gadymy Beýik Ýüpek Ýolunyň üstünde ýerleşýän bu ýurt baý taryhy we medeni mirasa eýedir.",
+    about_text_2: "Türkmenistan dünýäde iň gadymy siwilizasiýalaryň biridigi bolan Margiana we Parthiýa patyşalyklaryna öý eýeçiligini edipdir. Aşgabat, Merw, we Köneürgenç ýaly şäherler dünýäniň iň gyzykly taryhy ýerleriniň hataryna girýär.",
+    about_history: "Taryhy Ýerler",
+    about_nature_1: "UNESCO Mirasy",
+    about_nature_2: "Tebigy Gözellik",
+    about_nature_3: "Sähra we Daglar",
+    
+    feature_hospitality_title: "Myhmansöýerlik",
+    feature_hospitality_desc: "Türkmen halkynyň myhmansöýerligi dünýä belli. Her myhmana öýdäki ýaly mähirli we dostlukly çemeleşilýär.",
+    feature_culture_title: "Medeniýet",
+    feature_culture_desc: "Baý medeni däp-dessurlar, döredijilik sungaty we gadymy senetler halkyň durmuşynyň aýrylmaz bölegidir.",
+    feature_food_title: "Milli Aşlar",
+    feature_food_desc: "Türkmen tagamlary özboluşly tagamy we däpleri bilen dünýäde tanalýar. Palaw, şaşlyk we çörek iň meşhur naharlarymyzdyr.",
+    
+    destinations_title_1: "Meşhur",
+    destinations_title_2: "Syýahat Ýerleri",
+    destinations_subtitle: "Türkmenistanyň iň gözel we gyzykly ýerlerini açyň",
+    dest_ashgabat_title: "Aşgabat",
+    dest_ashgabat_desc: "Türkmenistanyň paýtagty, ak mermerden gurlan şäher. Häzirki zaman binagärlik sungatynyň ajaýyp nusgasy.",
+    dest_ashgabat_tag: "Paýtagt",
+    dest_darvaza_title: "Derweze",
+    dest_darvaza_desc: "\"Dowzagyň Gapysy\" diýlip atlandyrylýan ajaýyp tebigy hadysa. Gije-gündiz ýanýan gaz krateridir.",
+    dest_darvaza_tag: "Gaz Krateri",
+    dest_kunya_title: "Köneürgenç",
+    dest_kunya_desc: "UNESCO-nyň Bütindünýä mirasy. Gadymy Horezm patyşalygymyzyň yzlary, taryhy binalar we minorlar.",
+    dest_kunya_tag: "UNESCO Mirasy",
+    dest_merv_title: "Merw",
+    dest_merv_desc: "Gadymy Beýik Ýüpek Ýolunyň üstündäki iň uly we mährum şäherleriniň biri. Baý taryhy ýadygärlikler.",
+    dest_merv_tag: "Taryhy Şäher",
+    dest_koytendag_title: "Köýtendag",
+    dest_koytendag_desc: "Dagly sebit, tebigy goraghanalar we özboluşly flora-fauna. Tebigy gözellik bilen dolu ýer.",
+    dest_koytendag_tag: "Dagly Sebit",
+    dest_awaza_title: "Awaza",
+    dest_awaza_desc: "Hazar deňziniň kenaryndaky häzirki zaman dynç alyş zolagy. Pläž we lukman sebitleri.",
+    dest_awaza_tag: "Dynç Alyş",
+    
+    services_title_1: "Biziň",
+    services_title_2: "Hyzmatlarymyz",
+    services_subtitle: "Siziň ajaýyp syýahatyňyzy guramak üçin ähli zerur hyzmatlar",
+    service_hotel_title: "Myhmanhana Bronlaş",
+    service_hotel_desc: "Iň gowy myhmanhanalardan saýlap, rahat we ykjam myhmanhanalary bronlaň.",
+    service_transport_title: "Transport Hyzmatlary",
+    service_transport_desc: "Howa menzilinden myhmanhana çenli we ähli syýahat ugurlary üçin amatly transport.",
+    service_guide_title: "Ekskursiýa Gollanmasy",
+    service_guide_desc: "Tejribeli we bilimli gollanmalar bilen ähli taryhy we gözel ýerleri gezýäň.",
+    service_visa_title: "Wiza Goldawy",
+    service_visa_desc: "Wiza resmileşdirmek we ähli zerur resminamalary taýýarlamakda kömek edýäris.",
+    
+    offer_title: "Ýörite Teklipimiz",
+    offer_desc: "Häzir Türkmenistana syýahat turlaryny arzanladyş bilen almagy başlaň! 7 günlük tur paketlerimize 20% arzanladyş alýarsyňyz.",
+    offer_li_1: "Myhmanhana we nahar öz içinde",
+    offer_li_2: "Professional gollanma hyzmaty",
+    offer_li_3: "Transport we muzeý petekleri",
+    offer_li_4: "24/7 goldaw hyzmaty",
+    
+    tour_title: "5 Gün / 4 Gije Syýahat",
+    tour_subtitle: "Aşgabat we Türkmenistanyň iň ajaýyp ýerleri boýunça aýratyn syýahat programmasy",
+    tour_day1_title: "1-nji gün – Aşgabat",
+    tour_day1_1: "Irden ir sagatlarda sizi howa menzilinde garşy alarys we myhmanhana ýerleşdireris.",
+    tour_day1_2: "🍽 Ertirlik: ýerli restoranda nahar edinilýär, soňra dynç almak üçin wagt berilýär.",
+    tour_day1_3: "📍 Gezelenç: Garaşsyzlyk meýdany (118m beýiklikdäki ýadygärlik), taryhy heýkeller we seýilgähler.",
+    tour_day1_4: "🍴 Günortanlykdan soň Bitaraplyk binasy we Ashgabat Mall gezilýär.",
+    tour_day1_5: "🌆 Şäher boýunça gezelenç. Gijäni myhmanhanada geçireris.",
+    tour_day2_title: "2-nji gün – Köne Nusaý",
+    tour_day2_1: "🏛 Köne Nusaý – parfýanlaryň gadymy şäheri.",
+    tour_day2_2: "Bu ýerde tapyldy: • mawzoleýler • ybadathanalar • gadymy hazynalar • sungat eserleri we teňňeler",
+    tour_day2_3: "🍽 Günortanlykdan soň Watan mukaddesligi muzeýi gezilýär: • Göktepe söweşi • taryh we uruş maglumatlary • ýer titreme zaly • häzirki Aşgabat",
+    tour_day2_4: "🛍 Agşamlyk — Berkarar söwda merkezinde.",
+    tour_day3_title: "3-nji gün – Ahalteke atlary",
+    tour_day3_1: "🐎 Ahal-teke atlary bilen tanyşlyk.",
+    tour_day3_2: "Bu atlar: • asylly we owadan • altyn/kümüş öwüşginli • çydamly we çalasyn",
+    tour_day3_3: "Atçylyk medeniýeti we türkmen gymmatlygy bilen tanyşlyk.",
+    tour_day3_4: "🍽 Agşamlyk ýerli restoranda. Şäher gezelenji.",
+    tour_day4_title: "4-nji gün – Derweze (Hell Gates)",
+    tour_day4_1: "🔥 Derweze gaz krateri (60m, 1971-den bäri ýanýar).",
+    tour_day4_2: "🏜 Garagum çöli boýunça syýahat — Beýik Ýüpek ýolunyň bölegi.",
+    tour_day4_3: "🍖 Agşam: mangal we gijeki fotosessiýa.",
+    tour_day4_4: "⛺ Gijäni ak öýde (ýurt) geçireris — türkmen däp-dessury.",
+    tour_day5_title: "5-nji gün – Gaýdyp uçuş",
+    tour_day5_1: "🛍 Aşgabat söwda merkezinde gezelenç.",
+    tour_day5_2: "🍽 Günortanlykdan soň myhmanhana gaýdylýar.",
+    tour_day5_3: "✈ Aeroporta ugradylyp, uçuş: FZ 732 – 05:20",
+    tour_price_title: "Bahasy: 870$",
+    tour_price_desc: "4 gijelik myhmanhana + 1 gije çadyrda ýaşamak",
+    
+    testimonials_title_1: "Müşderilerimiziň",
+    testimonials_title_2: "Pikirler",
+    testimonials_subtitle: "Türkmenistanda biziň bilen syýahat eden müşderilerimiz näme diýýär?",
+    testimonial_1_name: "Ahmed Magtymow",
+    testimonial_1_text: "\"Ajaýyp tejribe! Ähli zat gaty gowy gurnalypdy. Gollanmamyz örän bilimli we mähirli adamdy. Türkmenistanyň taryhy ýerlerini görmek meniň üçin ýatdan çykmajak tejribe boldy.\"",
+    testimonial_2_name: "Jennet Gurbanova",
+    testimonial_2_text: "\"Professional hyzmat we ajaýyp myhmansöýerlik. Derwezäni görmek haýran galdyryjy tejribe! Ähli zatlar wagtynda we gowy gurnaldy. Uly minnetdarlyk bildirýärin!\"",
+    testimonial_3_name: "Döwlet Annaýew",
+    testimonial_3_text: "\"Maşgalama bilen ajaýyp syýahat. Çagalar we ulular üçin gyzykly maksatnamalar taýýarlanypdyr. Awaza pläžinde dynç almak aýratyn lezzetlidi. Hemmesine maslahat berýärin!\"",
+    
+    gallery_title_1: "Surat",
+    gallery_title_2: "Galereýa",
+    gallery_subtitle: "Türkmenistanyň gözelligini suratlar arkaly synlaň",
+    
+    contact_title: "Biziň Bilen Habarlaşyň",
+    contact_subtitle: "Soraglaryňyz bar bolsa ýa-da syýahatyňyzy guramak isleseňiz, bize ýüz tutuň",
+    contact_info_title: "Habarlaşmak Maglumatlary",
+    contact_address_title: "Salgy",
+    contact_address_desc: "Aşgabat şäheri, Kendir obýezdnoý.",
+    contact_phone_title: "Telefon",
+    contact_email_title: "Email",
+    contact_worktime_title: "Iş Wagty",
+    contact_worktime_1: "Duşenbe - Juma: 09:00 - 18:00",
+    contact_worktime_2: "Ýekşenbe: Işlänok",
+    contact_social_title: "Sosial Mediýa",
+    
+    footer_agency: "Syýahat Agentligi",
+    footer_desc: "Türkmenistanyň iň gowy syýahat agentligi. Siziň ajaýyp syýahatyňyz üçin ähli hyzmatlary hödürleýäris.",
+    footer_links: "Çalt Baglanyşyklar",
+    footer_places: "Syýahat Ýerleri",
+    footer_rights: "© 2024 Gözel Syýahat. Ähli hukuklar goralan.",
+    footer_privacy: "Gizlinlik Syýasaty",
+    footer_terms: "Şertler we Düzgünler",
+    
+    alert_message: "Habaryňyz üçin sag boluň! Biz gysga wagtyň içinde size jogap bereris."
+  },
+
+            ru: {
+    page_title: "Туркменистанское туристическое агентство",
+    
+    logo_title: "Gözel Syýahat",
+    logo_subtitle: "Туркменистан Путешествия",
+    
+    nav_home: "Главная страница",
+    nav_about: "О нас",
+    nav_places: "Места",
+    nav_services: "Услуги",
+    nav_contact: "Контакты",
+    
+    hero_title: "Добро пожаловать в Туркменистан",
+    hero_subtitle: "Отправьтесь в путешествие по удивительной стране, полной древней истории, прекрасной природы и теплого гостеприимства",
+    hero_btn_explore: "Изучить места",
+    hero_btn_contact: "Связаться",
+    hero_clients: "Довольных клиентов",
+    hero_places: "Туристических мест",
+    hero_experience: "Лет опыта",
+    hero_support: "Поддержка",
+    
+    about_title_1: "О",
+    about_title_2: "Туркменистане",
+    about_subtitle: "Древняя история и современность",
+    about_text_1: "Туркменистан — удивительная страна, расположенная в Центральной Азии. Расположенная на древнем Великом Шелковом пути, эта страна обладает богатым историческим и культурным наследием.",
+    about_text_2: "Туркменистан был домом для Маргианы и Парфянского царства, одних из древнейших цивилизаций в мире. Такие города, как Ашхабад, Мерв и Куня-Ургенч, входят в число самых интересных исторических мест в мире.",
+    about_history: "Исторические места",
+    about_nature_1: "Наследие ЮНЕСКО",
+    about_nature_2: "Природная красота",
+    about_nature_3: "Пустыни и горы",
+    
+    feature_hospitality_title: "Гостеприимство",
+    feature_hospitality_desc: "Гостеприимство туркменского народа известно во всем мире. К каждому гостю относятся тепло и дружелюбно, как к родному.",
+    feature_culture_title: "Культура",
+    feature_culture_desc: "Богатые культурные традиции, творческое искусство и древние ремесла являются неотъемлемой частью жизни народа.",
+    feature_food_title: "Национальная кухня",
+    feature_food_desc: "Туркменские блюда известны в мире своим неповторимым вкусом и традициями. Плов, шашлык и хлеб — наши самые известные блюда.",
+    
+    destinations_title_1: "Популярные",
+    destinations_title_2: "Туристические места",
+    destinations_subtitle: "Откройте для себя самые красивые и интересные места Туркменистана",
+    dest_ashgabat_title: "Ашхабад",
+    dest_ashgabat_desc: "Столица Туркменистана, город, построенный из белого мрамора. Прекрасный образец современной архитектуры.",
+    dest_ashgabat_tag: "Столица",
+    dest_darvaza_title: "Дарваза",
+    dest_darvaza_desc: "Удивительное природное явление, известное как «Врата ада». Это газовый кратер, который горит днем и ночью.",
+    dest_darvaza_tag: "Газовый кратер",
+    dest_kunya_title: "Куня-Ургенч",
+    dest_kunya_desc: "Всемирное наследие ЮНЕСКО. Следы древнего Хорезмского царства, исторические здания и минареты.",
+    dest_kunya_tag: "Наследие ЮНЕСКО",
+    dest_merv_title: "Мерв",
+    dest_merv_desc: "Один из крупнейших и важнейших городов на древнем Великом Шелковом пути. Богатые исторические памятники.",
+    dest_merv_tag: "Исторический город",
+    dest_koytendag_title: "Койтендаг",
+    dest_koytendag_desc: "Горный регион, природные заповедники и уникальная флора и фауна. Место, полное природной красоты.",
+    dest_koytendag_tag: "Горный регион",
+    dest_awaza_title: "Аваза",
+    dest_awaza_desc: "Современная зона отдыха на берегу Каспийского моря. Пляжи и оздоровительные центры.",
+    dest_awaza_tag: "Отдых",
+    
+    services_title_1: "Наши",
+    services_title_2: "Услуги",
+    services_subtitle: "Все необходимые услуги для организации вашего идеального путешествия",
+    service_hotel_title: "Бронирование отелей",
+    service_hotel_desc: "Выбирайте из лучших отелей и бронируйте комфортабельные и уютные номера.",
+    service_transport_title: "Транспортные услуги",
+    service_transport_desc: "Комфортабельный транспорт от аэропорта до отеля и по всем туристическим маршрутам.",
+    service_guide_title: "Услуги гида",
+    service_guide_desc: "Путешествуйте по всем историческим и красивым местам с опытными и знающими гидами.",
+    service_visa_title: "Визовая поддержка",
+    service_visa_desc: "Мы помогаем в оформлении визы и подготовке всех необходимых документов.",
+    
+    offer_title: "Специальное предложение",
+    offer_desc: "Начните бронировать туры в Туркменистан со скидкой прямо сейчас! Вы получаете 20% скидку на наши 7-дневные турпакеты.",
+    offer_li_1: "Отель и питание включены",
+    offer_li_2: "Профессиональные услуги гида",
+    offer_li_3: "Транспорт и билеты в музеи",
+    offer_li_4: "Круглосуточная служба поддержки",
+    
+    tour_title: "Тур 5 Дней / 4 Ночи",
+    tour_subtitle: "Специальная программа тура по Ашхабаду и самым красивым местам Туркменистана",
+    tour_day1_title: "День 1 – Ашхабад",
+    tour_day1_1: "Рано утром мы встретим вас в аэропорту и разместим в отеле.",
+    tour_day1_2: "🍽 Завтрак: прием пищи в местном ресторане, затем свободное время для отдыха.",
+    tour_day1_3: "📍 Экскурсия: Площадь Независимости (памятник высотой 118 м), исторические статуи и парки.",
+    tour_day1_4: "🍴 После обеда посещение Монумента Нейтралитета и ТРЦ Ashgabat Mall.",
+    tour_day1_5: "🌆 Прогулка по городу. Ночевка в отеле.",
+    tour_day2_title: "День 2 – Старая Ниса",
+    tour_day2_1: "🏛 Старая Ниса – древний город парфян.",
+    tour_day2_2: "Здесь были найдены: • мавзолеи • храмы • древние сокровища • произведения искусства и монеты",
+    tour_day2_3: "🍽 После обеда посещение музея «Святость Родины»: • Геок-Тепинское сражение • исторические и военные данные • зал землетрясения • современный Ашхабад",
+    tour_day2_4: "🛍 Вечер — в торговом центре Беркарар.",
+    tour_day3_title: "День 3 – Ахалтекинские лошади",
+    tour_day3_1: "🐎 Знакомство с ахалтекинскими лошадьми.",
+    tour_day3_2: "Эти лошади: • благородные и красивые • с золотым/серебряным отливом • выносливые и быстрые",
+    tour_day3_3: "Знакомство с культурой коневодства и туркменскими ценностями.",
+    tour_day3_4: "🍽 Ужин в местном ресторане. Прогулка по городу.",
+    tour_day4_title: "День 4 – Дарваза (Врата Ада)",
+    tour_day4_1: "🔥 Газовый кратер Дарваза (60 м, горит с 1971 года).",
+    tour_day4_2: "🏜 Путешествие по пустыне Каракумы — части Великого Шелкового пути.",
+    tour_day4_3: "🍖 Вечер: барбекю и ночная фотосессия.",
+    tour_day4_4: "⛺ Ночевка в белой юрте — по туркменским традициям.",
+    tour_day5_title: "День 5 – Обратный вылет",
+    tour_day5_1: "🛍 Прогулка по торговому центру Ашхабада.",
+    tour_day5_2: "🍽 Возвращение в отель после обеда.",
+    tour_day5_3: "✈ Трансфер в аэропорт, рейс: FZ 732 – 05:20",
+    tour_price_title: "Цена: 870$",
+    tour_price_desc: "4 ночи в отеле + 1 ночь в палатке (юрте)",
+    
+    testimonials_title_1: "Отзывы",
+    testimonials_title_2: "наших клиентов",
+    testimonials_subtitle: "Что говорят клиенты, путешествовавшие с нами по Туркменистану?",
+    testimonial_1_name: "Ахмед Магтымов",
+    testimonial_1_text: "\"Отличный опыт! Все было очень хорошо организовано. Наш гид был очень знающим и дружелюбным человеком. Увидеть исторические места Туркменистана стало для меня незабываемым опытом.\"",
+    testimonial_2_name: "Дженнет Гурбанова",
+    testimonial_2_text: "\"Профессиональное обслуживание и прекрасное гостеприимство. Увидеть Дарвазу — это потрясающий опыт! Все было вовремя и хорошо организовано. Огромное спасибо!\"",
+    testimonial_3_name: "Довлет Аннаев",
+    testimonial_3_text: "\"Отличное путешествие с семьей. Были подготовлены интересные программы для детей и взрослых. Отдых на пляже Авазы был особенно приятным. Всем советую!\"",
+    
+    gallery_title_1: "Фото",
+    gallery_title_2: "Галерея",
+    gallery_subtitle: "Посмотрите на красоту Туркменистана через фотографии",
+    
+    contact_title: "Свяжитесь с нами",
+    contact_subtitle: "Если у вас есть вопросы или вы хотите организовать поездку, свяжитесь с нами",
+    contact_info_title: "Контактная информация",
+    contact_address_title: "Адрес",
+    contact_address_desc: "Город Ашхабад, Кендир объездная.",
+    contact_phone_title: "Телефон",
+    contact_email_title: "Email",
+    contact_worktime_title: "Время работы",
+    contact_worktime_1: "Понедельник - Пятница: 09:00 - 18:00",
+    contact_worktime_2: "Воскресенье: Выходной",
+    contact_social_title: "Социальные сети",
+    
+    footer_agency: "Туристическое Агентство",
+    footer_desc: "Лучшее туристическое агентство в Туркменистане. Мы предлагаем все услуги для вашего идеального путешествия.",
+    footer_links: "Быстрые ссылки",
+    footer_places: "Туристические места",
+    footer_rights: "© 2024 Gözel Syýahat. Все права защищены.",
+    footer_privacy: "Политика конфиденциальности",
+    footer_terms: "Правила и условия",
+    
+    alert_message: "Спасибо за ваше сообщение! Мы ответим вам в кратчайшие сроки."
+  },
+
+            en: {
+    page_title: "Turkmenistan Travel Agency",
+    
+    logo_title: "Gözel Syýahat",
+    logo_subtitle: "Turkmenistan Travel",
+    
+    nav_home: "Home",
+    nav_about: "About Us",
+    nav_places: "Destinations",
+    nav_services: "Services",
+    nav_contact: "Contact Us",
+    
+    hero_title: "Welcome to Turkmenistan",
+    hero_subtitle: "Embark on a journey through an amazing country full of ancient history, beautiful nature, and warm hospitality",
+    hero_btn_explore: "Explore Places",
+    hero_btn_contact: "Contact",
+    hero_clients: "Happy Clients",
+    hero_places: "Destinations",
+    hero_experience: "Years of Experience",
+    hero_support: "Support",
+    
+    about_title_1: "About",
+    about_title_2: "Turkmenistan",
+    about_subtitle: "Ancient History and Modern Times",
+    about_text_1: "Turkmenistan is an amazing country located in Central Asia. Situated on the ancient Great Silk Road, this country has a rich historical and cultural heritage.",
+    about_text_2: "Turkmenistan was home to Margiana and the Parthian Empire, some of the oldest civilizations in the world. Cities like Ashgabat, Merv, and Kunya-Urgench are among the most interesting historical sites in the world.",
+    about_history: "Historical Sites",
+    about_nature_1: "UNESCO Heritage",
+    about_nature_2: "Natural Beauty",
+    about_nature_3: "Deserts and Mountains",
+    
+    feature_hospitality_title: "Hospitality",
+    feature_hospitality_desc: "The hospitality of the Turkmen people is known worldwide. Every guest is treated warmly and friendlily, like family.",
+    feature_culture_title: "Culture",
+    feature_culture_desc: "Rich cultural traditions, creative arts, and ancient crafts are an integral part of the people's lives.",
+    feature_food_title: "National Cuisine",
+    feature_food_desc: "Turkmen dishes are known globally for their unique taste and traditions. Pilaf, shashlik, and bread are our most famous foods.",
+    
+    destinations_title_1: "Popular",
+    destinations_title_2: "Destinations",
+    destinations_subtitle: "Discover the most beautiful and interesting places in Turkmenistan",
+    dest_ashgabat_title: "Ashgabat",
+    dest_ashgabat_desc: "The capital of Turkmenistan, a city built of white marble. A beautiful example of modern architecture.",
+    dest_ashgabat_tag: "Capital",
+    dest_darvaza_title: "Darvaza",
+    dest_darvaza_desc: "An amazing natural phenomenon known as the \"Gates of Hell\". It is a gas crater that burns day and night.",
+    dest_darvaza_tag: "Gas Crater",
+    dest_kunya_title: "Kunya-Urgench",
+    dest_kunya_desc: "A UNESCO World Heritage site. Traces of the ancient Khorezm kingdom, historical buildings, and minarets.",
+    dest_kunya_tag: "UNESCO Heritage",
+    dest_merv_title: "Merv",
+    dest_merv_desc: "One of the largest and most important cities on the ancient Great Silk Road. Rich historical monuments.",
+    dest_merv_tag: "Historical City",
+    dest_koytendag_title: "Koytendag",
+    dest_koytendag_desc: "A mountainous region, nature reserves, and unique flora and fauna. A place full of natural beauty.",
+    dest_koytendag_tag: "Mountain Region",
+    dest_awaza_title: "Awaza",
+    dest_awaza_desc: "A modern recreation zone on the shores of the Caspian Sea. Beaches and health resorts.",
+    dest_awaza_tag: "Recreation",
+    
+    services_title_1: "Our",
+    services_title_2: "Services",
+    services_subtitle: "All the necessary services to organize your perfect trip",
+    service_hotel_title: "Hotel Booking",
+    service_hotel_desc: "Choose from the best hotels and book comfortable and cozy rooms.",
+    service_transport_title: "Transport Services",
+    service_transport_desc: "Comfortable transport from the airport to the hotel and across all tourist routes.",
+    service_guide_title: "Tour Guide Services",
+    service_guide_desc: "Travel to all historical and beautiful places with experienced and knowledgeable guides.",
+    service_visa_title: "Visa Support",
+    service_visa_desc: "We help with visa processing and the preparation of all necessary documents.",
+    
+    offer_title: "Special Offer",
+    offer_desc: "Start booking your tours to Turkmenistan with a discount now! You get a 20% discount on our 7-day tour packages.",
+    offer_li_1: "Hotel and meals included",
+    offer_li_2: "Professional guide services",
+    offer_li_3: "Transport and museum tickets",
+    offer_li_4: "24/7 customer support",
+    
+    tour_title: "5 Days / 4 Nights Tour",
+    tour_subtitle: "A special tour program covering Ashgabat and the most beautiful places in Turkmenistan",
+    tour_day1_title: "Day 1 – Ashgabat",
+    tour_day1_1: "Early in the morning, we will meet you at the airport and transfer you to the hotel.",
+    tour_day1_2: "🍽 Breakfast: meal at a local restaurant, then free time to relax.",
+    tour_day1_3: "📍 Excursion: Independence Square (118m high monument), historical statues, and parks.",
+    tour_day1_4: "🍴 After lunch, a visit to the Monument of Neutrality and Ashgabat Mall.",
+    tour_day1_5: "🌆 City walk. Overnight stay at the hotel.",
+    tour_day2_title: "Day 2 – Old Nisa",
+    tour_day2_1: "🏛 Old Nisa – the ancient city of the Parthians.",
+    tour_day2_2: "Found here: • mausoleums • temples • ancient treasures • artworks and coins",
+    tour_day2_3: "🍽 After lunch, a visit to the \"Sanctity of the Motherland\" museum: • Battle of Geok Tepe • historical and war data • earthquake hall • modern Ashgabat",
+    tour_day2_4: "🛍 Evening — at the Berkarar shopping center.",
+    tour_day3_title: "Day 3 – Akhal-Teke Horses",
+    tour_day3_1: "🐎 Introduction to Akhal-Teke horses.",
+    tour_day3_2: "These horses are: • noble and beautiful • with a golden/silver shine • enduring and fast",
+    tour_day3_3: "Introduction to horse breeding culture and Turkmen values.",
+    tour_day3_4: "🍽 Dinner at a local restaurant. City walk.",
+    tour_day4_title: "Day 4 – Darvaza (Gates of Hell)",
+    tour_day4_1: "🔥 Darvaza gas crater (60m, burning since 1971).",
+    tour_day4_2: "🏜 Journey through the Karakum Desert — part of the Great Silk Road.",
+    tour_day4_3: "🍖 Evening: BBQ and night photoshoot.",
+    tour_day4_4: "⛺ Overnight stay in a white yurt — according to Turkmen traditions.",
+    tour_day5_title: "Day 5 – Return Flight",
+    tour_day5_1: "🛍 Walk through an Ashgabat shopping center.",
+    tour_day5_2: "🍽 Return to the hotel after lunch.",
+    tour_day5_3: "✈ Transfer to the airport, flight: FZ 732 – 05:20",
+    tour_price_title: "Price: 870$",
+    tour_price_desc: "4 nights in a hotel + 1 night in a tent (yurt)",
+    
+    testimonials_title_1: "Our Clients'",
+    testimonials_title_2: "Reviews",
+    testimonials_subtitle: "What do clients who traveled with us in Turkmenistan say?",
+    testimonial_1_name: "Ahmed Magtymow",
+    testimonial_1_text: "\"Great experience! Everything was very well organized. Our guide was a very knowledgeable and friendly person. Seeing the historical sites of Turkmenistan was an unforgettable experience for me.\"",
+    testimonial_2_name: "Jennet Gurbanova",
+    testimonial_2_text: "\"Professional service and wonderful hospitality. Seeing Darvaza is an amazing experience! Everything was on time and well organized. Huge thanks!\"",
+    testimonial_3_name: "Dowlet Annayew",
+    testimonial_3_text: "\"An excellent trip with the family. Interesting programs were prepared for children and adults. Relaxing on the Awaza beach was especially pleasant. I recommend it to everyone!\"",
+    
+    gallery_title_1: "Photo",
+    gallery_title_2: "Gallery",
+    gallery_subtitle: "See the beauty of Turkmenistan through photos",
+    
+    contact_title: "Contact Us",
+    contact_subtitle: "If you have any questions or want to organize a trip, please contact us",
+    contact_info_title: "Contact Information",
+    contact_address_title: "Address",
+    contact_address_desc: "Ashgabat city, Kendir bypass.",
+    contact_phone_title: "Phone",
+    contact_email_title: "Email",
+    contact_worktime_title: "Working Hours",
+    contact_worktime_1: "Monday - Friday: 09:00 - 18:00",
+    contact_worktime_2: "Sunday: Closed",
+    contact_social_title: "Social Media",
+    
+    footer_agency: "Travel Agency",
+    footer_desc: "The best travel agency in Turkmenistan. We offer all services for your perfect trip.",
+    footer_links: "Quick Links",
+    footer_places: "Destinations",
+    footer_rights: "© 2024 Gözel Syýahat. All rights reserved.",
+    footer_privacy: "Privacy Policy",
+    footer_terms: "Terms and Conditions",
+    
+    alert_message: "Thank you for your message! We will reply to you as soon as possible."
+  },
+  tr: {
+    page_title: "Türkmenistan Seyahat Acentesi",
+    
+    logo_title: "Gözel Syýahat",
+    logo_subtitle: "Türkmenistan Seyahat",
+    
+    nav_home: "Ana Sayfa",
+    nav_about: "Hakkımızda",
+    nav_places: "Görülecek Yerler",
+    nav_services: "Hizmetler",
+    nav_contact: "İletişim",
+    
+    hero_title: "Türkmenistan'a Hoş Geldiniz",
+    hero_subtitle: "Kadim tarih, muhteşem doğal güzellikler ve sıcak misafirperverlikle dolu bu eşsiz ülkeyi keşfedin",
+    hero_btn_explore: "Yerleri Keşfet",
+    hero_btn_contact: "İletişime Geç",
+    hero_clients: "Mutlu Müşteri",
+    hero_places: "Seyahat Noktası",
+    hero_experience: "Yıllık Tecrübe",
+    hero_support: "Destek",
+    
+    about_title_1: "Türkmenistan",
+    about_title_2: "Hakkında",
+    about_subtitle: "Kadim Tarih ve Modern Yaşam",
+    about_text_1: "Türkmenistan, Orta Asya'da yer alan büyüleyici bir ülkedir. Tarihi İpek Yolu üzerinde bulunan bu topraklar, zengin bir tarihi ve kültürel mirasa sahiptir.",
+    about_text_2: "Türkmenistan, dünyanın en eski medeniyetlerinden olan Margiana ve Part İmparatorluğu'na ev sahipliği yapmıştır. Aşkabat, Merv ve Köhne Ürgenç gibi şehirler dünyanın en ilginç tarihi durakları arasındadır.",
+    about_history: "Tarihi Yerler",
+    about_nature_1: "UNESCO Mirası",
+    about_nature_2: "Doğal Güzellik",
+    about_nature_3: "Çöl ve Dağlar",
+    
+    feature_hospitality_title: "Misafirperverlik",
+    feature_hospitality_desc: "Türkmen halkının misafirperverliği dünyaca ünlüdür. Her misafir, bir aile ferdi gibi sıcak ve dostça karşılanır.",
+    feature_culture_title: "Kültür",
+    feature_culture_desc: "Zengin kültürel gelenekler, yaratıcı sanatlar ve kadim el sanatları halkın yaşamının ayrılmaz bir parçasıdır.",
+    feature_food_title: "Milli Mutfak",
+    feature_food_desc: "Türkmen yemekleri, eşsiz lezzetleri ve gelenekleri ile bilinir. Pilav, şaşlık ve ekmek (çörek) en meşhur lezzetlerimizdir.",
+    
+    destinations_title_1: "Popüler",
+    destinations_title_2: "Gezi Noktaları",
+    destinations_subtitle: "Türkmenistan'ın en güzel ve ilgi çekici yerlerini keşfedin",
+    dest_ashgabat_title: "Aşkabat",
+    dest_ashgabat_desc: "Türkmenistan'ın başkenti, beyaz mermerli şehir. Modern mimarinin dünyadaki en nadide örneklerinden biri.",
+    dest_ashgabat_tag: "Başkent",
+    dest_darvaza_title: "Darvaza",
+    dest_darvaza_desc: "\"Cehennem Kapısı\" olarak bilinen doğa harikası. Gece gündüz yanan devasa bir gaz krateri.",
+    dest_darvaza_tag: "Gaz Krateri",
+    dest_kunya_title: "Köhne Ürgenç",
+    dest_kunya_desc: "UNESCO Dünya Mirası listesinde. Kadim Harezmşahlar devletinin izleri, tarihi binalar ve minareler.",
+    dest_kunya_tag: "UNESCO Mirası",
+    dest_merv_title: "Merv",
+    dest_merv_desc: "Tarihi İpek Yolu'nun en büyük ve en önemli şehirlerinden biri. Zengin tarihi kalıntılar.",
+    dest_merv_tag: "Tarihi Şehir",
+    dest_koytendag_title: "Köytendağ",
+    dest_koytendag_desc: "Dağlık bölge, doğa koruma alanları ve eşsiz flora-fauna. Doğayla iç içe bir durak.",
+    dest_koytendag_tag: "Dağlık Bölge",
+    dest_awaza_title: "Avaza",
+    dest_awaza_desc: "Hazar Denizi kıyısında modern bir dinlenme bölgesi. Plajlar ve sağlık merkezleri.",
+    dest_awaza_tag: "Tatil Bölgesi",
+    
+    services_title_1: "Bizim",
+    services_title_2: "Hizmetlerimiz",
+    services_subtitle: "Kusursuz seyahatinizi organize etmek için gerekli tüm hizmetler",
+    service_hotel_title: "Otel Rezervasyonu",
+    service_hotel_desc: "En iyi oteller arasından seçim yapın, konforlu ve huzurlu odanızı ayırtın.",
+    service_transport_title: "Ulaşım Hizmetleri",
+    service_transport_desc: "Havalimanından otele ve tüm turistik rotalara konforlu ulaşım sağlıyoruz.",
+    service_guide_title: "Rehberlik Hizmeti",
+    service_guide_desc: "Deneyimli ve bilgili rehberler eşliğinde tüm tarihi ve turistik yerleri gezin.",
+    service_visa_title: "Vize Desteği",
+    service_visa_desc: "Vize işlemleri ve gerekli tüm belgelerin hazırlanmasında size yardımcı oluyoruz.",
+    
+    offer_title: "Özel Teklifimiz",
+    offer_desc: "Türkmenistan turları için hemen rezervasyon yapın! 7 günlük tur paketlerimizde %20 indirim fırsatını kaçırmayın.",
+    offer_li_1: "Otel ve yemekler dahil",
+    offer_li_2: "Profesyonel rehberlik hizmeti",
+    offer_li_3: "Ulaşım ve müze giriş biletleri",
+    offer_li_4: "24/7 destek hizmeti",
+    
+    tour_title: "5 Gün / 4 Gece Turu",
+    tour_subtitle: "Aşkabat ve Türkmenistan'ın en büyüleyici yerlerini kapsayan özel tur programı",
+    tour_day1_title: "1. Gün – Aşkabat",
+    tour_day1_1: "Sabah erken saatlerde sizi havalimanında karşılayıp otelinize yerleştiriyoruz.",
+    tour_day1_2: "🍽 Kahvaltı: Yerel bir restoranda yemek, ardından dinlenmek için serbest zaman.",
+    tour_day1_3: "📍 Gezi: Bağımsızlık Meydanı (118m yüksekliğindeki anıt), tarihi heykeller ve parklar.",
+    tour_day1_4: "🍴 Öğle yemeğinden sonra Tarafsızlık Anıtı ve Ashgabat Mall ziyareti.",
+    tour_day1_5: "🌆 Şehir turu ve otelde konaklama.",
+    tour_day2_title: "2. Gün – Eski Nisa",
+    tour_day2_1: "🏛 Eski Nisa – Partların kadim başkenti.",
+    tour_day2_2: "Burada bulunanlar: • anıt mezarlar • tapınaklar • antik hazineler • sanat eserleri ve sikkeler",
+    tour_day2_3: "🍽 Öğle yemeğinden sonra Milli Müze ziyareti: • Gökdepe savaşı • tarihi ve askeri veriler • deprem salonu • modern Aşkabat",
+    tour_day2_4: "🛍 Akşam — Berkarar Alışveriş Merkezi gezisi.",
+    tour_day3_title: "3. Gün – Ahalteke Atları",
+    tour_day3_1: "🐎 Ahalteke atları ile tanışma.",
+    tour_day3_2: "Bu atlar: • asil ve güzel • altın/gümüş parıltılı • dayanıklı ve hızlıdır",
+    tour_day3_3: "Atçılık kültürü ve Türkmen değerleri üzerine kısa bir bilgilendirme.",
+    tour_day3_4: "🍽 Yerel restoranda akşam yemeği ve şehir yürüyüşü.",
+    tour_day4_title: "4. Gün – Darvaza (Cehennem Kapısı)",
+    tour_day4_1: "🔥 Darvaza gaz krateri (60m genişliğinde, 1971'den beri yanıyor).",
+    tour_day4_2: "🏜 Karakum Çölü gezisi — Tarihi İpek Yolu'nun bir parçası.",
+    tour_day4_3: "🍖 Akşam: Barbekü ve gece fotoğraf çekimi.",
+    tour_day4_4: "⛺ Geceleme geleneksel Türkmen çadırında (Ak öý/Yurt).",
+    tour_day5_title: "5. Gün – Dönüş Yolculuğu",
+    tour_day5_1: "🛍 Aşkabat çarşılarında alışveriş turu.",
+    tour_day5_2: "🍽 Öğle yemeğinden sonra otele dönüş ve hazırlık.",
+    tour_day5_3: "✈ Havalimanına transfer, uçuş: FZ 732 – 05:20",
+    tour_price_title: "Fiyat: 870$",
+    tour_price_desc: "4 gece otel + 1 gece çadır konaklaması",
+    
+    testimonials_title_1: "Müşterilerimizin",
+    testimonials_title_2: "Yorumları",
+    testimonials_subtitle: "Bizimle Türkmenistan'ı gezen misafirlerimiz neler diyor?",
+    testimonial_1_name: "Ahmed Magtymow",
+    testimonial_1_text: "\"Harika bir deneyimdi! Her şey çok iyi organize edilmişti. Rehberimiz çok bilgili ve cana yakın biriydi. Türkmenistan'ın tarihi yerlerini görmek unutulmazdı.\"",
+    testimonial_2_name: "Jennet Gurbanova",
+    testimonial_2_text: "\"Profesyonel hizmet ve mükemmel misafirperverlik. Darvaza'yı görmek büyüleyici bir deneyim! Her şey vaktinde yapıldı. Çok teşekkürler!\"",
+    testimonial_3_name: "Döwlet Annaýew",
+    testimonial_3_text: "\"Ailemle birlikte harika bir tatil geçirdik. Çocuklar ve yetişkinler için çok güzel programlar vardı. Avaza sahilinde dinlenmek çok keyifliydi. Herkese tavsiye ederim!\"",
+    
+    gallery_title_1: "Fotoğraf",
+    gallery_title_2: "Galerisi",
+    gallery_subtitle: "Fotoğraflarla Türkmenistan'ın eşsiz güzelliklerine göz atın",
+    
+    contact_title: "Bize Ulaşın",
+    contact_subtitle: "Sorularınız veya seyahat planlarınız için bizimle iletişime geçin",
+    contact_info_title: "İletişim Bilgileri",
+    contact_address_title: "Adres",
+    contact_address_desc: "Aşkabat şehri, Kendir çevre yolu.",
+    contact_phone_title: "Telefon",
+    contact_email_title: "E-posta",
+    contact_worktime_title: "Çalışma Saatleri",
+    contact_worktime_1: "Pazartesi - Cuma: 09:00 - 18:00",
+    contact_worktime_2: "Pazar: Kapalı",
+    contact_social_title: "Sosyal Medya",
+    
+    footer_agency: "Seyahat Acentesi",
+    footer_desc: "Türkmenistan'ın en iyi seyahat acentesi. Mükemmel seyahatiniz için her türlü hizmeti sunuyoruz.",
+    footer_links: "Hızlı Bağlantılar",
+    footer_places: "Görülecek Yerler",
+    footer_rights: "© 2024 Gözel Syýahat. Tüm hakları saklıdır.",
+    footer_privacy: "Gizlilik Politikası",
+    footer_terms: "Şartlar ve Koşullar",
+    
+    alert_message: "Mesajınız için teşekkürler! En kısa sürede size geri dönüş yapacağız."
+  }
+        };
+        // === ЯЗЫК ===
+        const langButtons = document.querySelectorAll('.lang-btn');
+
+        // смена языка
+        function changeLanguage(lang) {
+            // сохраняем язык
+            localStorage.setItem('lang', lang);
+
+            // меняем текст
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+
+            // обновляем placeholder (важно для input)
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+
+                if (translations[lang] && translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+
+            // обновляем title (tooltip)
+            document.querySelectorAll('[data-i18n-title]').forEach(el => {
+                const key = el.getAttribute('data-i18n-title');
+
+                if (translations[lang] && translations[lang][key]) {
+                    el.title = translations[lang][key];
+                }
+            });
+
+            // активная кнопка
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll(`.lang-btn[data-lang="${lang}"]`)
+    .forEach(btn => btn.classList.add('active'));
+        }
+
+        // === КНОПКИ ===
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang');
+                changeLanguage(lang);
+            });
+        });
+
+        // === ЗАГРУЗКА СТРАНИЦЫ ===
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('lang') || 'tk';
+            changeLanguage(savedLang);
+        });
+
+
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.style.opacity = '1';
+                scrollTopBtn.style.pointerEvents = 'auto';
+            } else {
+                scrollTopBtn.style.opacity = '0';
+                scrollTopBtn.style.pointerEvents = 'none';
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Navbar background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Habaryňyz üçin sag boluň! Biz gysga wagtyň içinde size jogap bereris.');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
